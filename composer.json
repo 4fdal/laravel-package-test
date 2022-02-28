@@ -1,0 +1,27 @@
+{
+    "name": "kodeingatan/mudahsenyo",
+    "description": "A demo package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Afdal",
+            "email": "afdal-develop@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "KodeIngatan\\Mudahsenyo\\": "src"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KodeIngatan\\Mudahsenyo\\Tests\\": "tests"
+        }
+    }
+}
