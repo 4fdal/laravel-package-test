@@ -3,7 +3,7 @@ name: Tests
 on:
   push:
     branches:
-      - '1.*'
+      - 'master'
   pull_request:
     types:
       - synchronize
@@ -50,10 +50,6 @@ jobs:
       # Display installed laravel version
       - name: Show laravel version
         run: composer show laravel/framework
-
-      # Install NPM dependencies
-      - name: Install Dependencies
-        run: npm install
 
       # Run phpunit tests
       - name: Run tests

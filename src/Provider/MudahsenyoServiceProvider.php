@@ -22,6 +22,9 @@ class MudahsenyoServiceProvider extends ServiceProvider
             return new Mudahsenyo();
         });
 
+        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../Routes/api.php');
+
     }
 
     public function boot()

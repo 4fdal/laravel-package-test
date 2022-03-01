@@ -1,1 +1,1 @@
-{"version":1,"defects":{"KodeIngatan\\Mudahsenyo\\Tests\\Feature\\ExampleTest::test_example":4},"times":{"KodeIngatan\\Mudahsenyo\\Tests\\Unit\\ExampleTest::test_example":0.16,"KodeIngatan\\Mudahsenyo\\Tests\\Feature\\ExampleTest::test_example":0.013}}
+{"version":1,"defects":{"KodeIngatan\\Mudahsenyo\\Tests\\Feature\\ExampleTest::test_example":3,"KodeIngatan\\Mudahsenyo\\Tests\\Unit\\ExampleTest::test_example":4},"times":{"KodeIngatan\\Mudahsenyo\\Tests\\Unit\\ExampleTest::test_example":0.189,"KodeIngatan\\Mudahsenyo\\Tests\\Feature\\ExampleTest::test_example":0.031}}
