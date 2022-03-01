@@ -55,10 +55,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Build static assets
-      - name: Compile Assets
-        run: npm run prod
-
       # Run phpunit tests
       - name: Run tests
         run: ./vendor/bin/phpunit
