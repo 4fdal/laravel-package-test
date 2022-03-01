@@ -2,6 +2,8 @@
 
 namespace KodeIngatan\Mudahsenyo\Tests;
 
+use KodeIngatan\Mudahsenyo\Provider\MudahsenyoServiceProvider;
+
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     public function setUp(): void
@@ -12,7 +14,9 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function getPackageProviders($app)
     {
-        return [];
+        return [
+            MudahsenyoServiceProvider::class,
+        ];
     }
 
     protected function getEnvironmentSetUp($app)

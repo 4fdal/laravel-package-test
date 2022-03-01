@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use KodeIngatan\Mudahsenyo\Facades\Mudahsenyo as FacadesMudahsenyo;
 use Mudahsenyo;
 
-class AppServiceProvider extends ServiceProvider
+class MudahsenyoServiceProvider extends ServiceProvider
 {
     public function register()
     {
