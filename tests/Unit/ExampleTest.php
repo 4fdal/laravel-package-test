@@ -1,6 +1,6 @@
 <?php
 
-namespace KodeIngatan\Mudahsenyo\Unit;
+namespace KodeIngatan\Mudahsenyo\Tests\Unit;
 
 use KodeIngatan\Mudahsenyo\Tests\TestCase;
 
