@@ -1,3 +1,10 @@
 <?php
 
-class Mudahsenyo {}
+class Mudahsenyo {
+
+
+
+
+
+
+}
