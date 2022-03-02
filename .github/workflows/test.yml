@@ -32,6 +32,8 @@ jobs:
           collation server: 'utf8_general_ci'
           mysql version: '8.0'
           mysql database: 'laravel'
+          mysql user: 'home'
+          mysql password: 'secret'
           mysql root password: 'secret'
 
       - uses: actions/checkout@master
@@ -65,6 +67,7 @@ jobs:
       - name: Laravel file configuration
         run: cd laravel && 
           sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env &&
+          sed -i 's/DB_USERNAME=root/DB_USERNAME=home/g' .env &&
           php artisan db:wipe && 
           php artisan migrate && 
           php artisan db:seed
