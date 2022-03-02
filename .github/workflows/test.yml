@@ -60,6 +60,10 @@ jobs:
       # Display installed laravel version
       - name: Show laravel version
         run: cd laravel && composer show laravel/framework
+        
+      # Laravel configuration
+      - name: Laravel file configuration
+        run: cd laravel && php artisan db:wipe && php artisan migrate
 
       # Install NPM dependencies
       - name: Install Dependencies
