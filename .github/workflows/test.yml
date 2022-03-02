@@ -32,7 +32,7 @@ jobs:
           collation server: 'utf8_general_ci'
           mysql version: '8.0'
           mysql database: 'laravel'
-          mysql root password: 'root'
+          mysql root password: 'secret'
 
       - uses: actions/checkout@master
 
@@ -63,7 +63,11 @@ jobs:
         
       # Laravel configuration
       - name: Laravel file configuration
-        run: cd laravel && php artisan db:wipe && php artisan migrate
+        run: cd laravel && 
+          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env &&
+          php artisan db:wipe && 
+          php artisan migrate && 
+          php artisan db:seed
 
       # Install NPM dependencies
       - name: Install Dependencies
