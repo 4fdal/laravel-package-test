@@ -35,7 +35,7 @@ jobs:
         with:
           collation server: 'utf8_general_ci'
           mysql version: '8.0'
-          mysql database: 'FantasyFestivals'
+          mysql database: 'laravel'
           mysql root password: 'root'
 
       - uses: actions/checkout@master
@@ -60,7 +60,7 @@ jobs:
       # Install legacy factories for Laravel 8/9
       - name: Install legacy factories for Laravel
         if: ${{ matrix.laravel == '8.*' || matrix.laravel == '9.*' }}
-        run: composer require laravel/legacy-factories
+        run: composer create-project laravel/laravel:^${{matrix.laravel}} laravel && cd laravel
 
       # Display installed laravel version
       - name: Show laravel version
