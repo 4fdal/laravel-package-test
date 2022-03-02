@@ -30,13 +30,13 @@ jobs:
 
     steps:
 
-    - name: Setup MySQL
-      uses: mirromutth/mysql-action@v1.1
-      with:
-        collation server: 'utf8_general_ci'
-        mysql version: '8.0'
-        mysql database: 'FantasyFestivals'
-        mysql root password: 'root'
+      - name: Setup MySQL
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          collation server: 'utf8_general_ci'
+          mysql version: '8.0'
+          mysql database: 'FantasyFestivals'
+          mysql root password: 'root'
 
       - uses: actions/checkout@master
 
