@@ -55,19 +55,19 @@ jobs:
 
       # Install legacy factories for Laravel 8/9
       - name: Install legacy factories for Laravel
-        run: composer create-project laravel/laravel:^${{matrix.laravel-require}} laravel && cd laravel
+        run: composer create-project laravel/laravel:^${{matrix.laravel-require}} laravel
 
       # Display installed laravel version
       - name: Show laravel version
-        run: composer show laravel/framework
+        run: cd laravel && composer show laravel/framework
 
       # Install NPM dependencies
       - name: Install Dependencies
-        run: npm install
+        run: cd laravel && npm install
 
       # Build static assets
       - name: Compile Assets
-        run: npm run prod
+        run: cd laravel && npm run dev
 
       # Run phpunit tests
       - name: Run tests
