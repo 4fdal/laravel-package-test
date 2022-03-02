@@ -17,13 +17,13 @@ class ExampleTest extends TestCase
     public function test_example()
     {
 
-        BadasoUser::create([
-            'name' => 'hello',
-            'email' => 'hello@world.com',
-            'password' => Hash::make("password"),
-        ]);
+        // BadasoUser::create([
+        //     'name' => 'hello',
+        //     'email' => 'hello@world.com',
+        //     'password' => Hash::make("password"),
+        // ]);
 
-        dd(BadasoUser::all());
+        // dd(BadasoUser::all());
 
         $response = $this->get('/');
         $response->assertSuccessful();
