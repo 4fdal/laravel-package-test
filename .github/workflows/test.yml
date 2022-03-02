@@ -61,14 +61,18 @@ jobs:
 
       # Display installed laravel version
       - name: Show laravel version
-        run: cd laravel && composer show laravel/framework
+        run: cd laravel && 
+          composer show laravel/framework
         
       # Laravel configuration
       - name: Laravel file configuration
         run: cd laravel && 
-          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env &&
           sed -i 's/DB_USERNAME=root/DB_USERNAME=home/g' .env &&
-          php artisan db:wipe && 
+          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env
+      
+      # Laravel setup
+      - name: Laravel setup 
+        run: php artisan db:wipe && 
           php artisan migrate && 
           php artisan db:seed
 
