@@ -72,7 +72,8 @@ jobs:
       
       # Laravel setup
       - name: Laravel setup 
-        run: php artisan db:wipe && 
+        run: cd laravel &&
+          php artisan db:wipe && 
           php artisan migrate && 
           php artisan db:seed
 
