@@ -14,6 +14,16 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_DATABASE: laravel
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     strategy:
       fail-fast: false
@@ -26,15 +36,15 @@ jobs:
 
     steps:
 
-      - name: Setup MySQL
-        uses: mirromutth/mysql-action@v1.1
-        with:
-          collation server: 'utf8_general_ci'
-          mysql version: '8.0'
-          mysql database: 'laravel'
-          mysql user: 'home'
-          mysql password: 'secret'
-          mysql root password: 'secret'
+#       - name: Setup MySQL
+#         uses: mirromutth/mysql-action@v1.1
+#         with:
+#           collation server: 'utf8_general_ci'
+#           mysql version: '8.0'
+#           mysql database: 'laravel'
+#           mysql user: 'home'
+#           mysql password: 'secret'
+#           mysql root password: 'secret'
 
       - uses: actions/checkout@master
 
@@ -68,7 +78,8 @@ jobs:
       - name: Laravel file configuration
         run: cd laravel && 
           sed -i 's/DB_USERNAME=root/DB_USERNAME=home/g' .env &&
-          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env
+          sed -i 's/DB_HOST=127.0.0.1/DB_HOST=mysql/g' .env &&
+          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env &&
       
       # Laravel setup
       - name: Laravel setup 
