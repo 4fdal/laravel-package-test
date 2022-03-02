@@ -22,6 +22,7 @@ class MudahsenyoServiceProvider extends ServiceProvider
             return new Mudahsenyo();
         });
 
+        $this->loadMigrationsFrom(__DIR__ . '/../Migrations');
         $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
         $this->loadRoutesFrom(__DIR__ . '/../Routes/api.php');
 

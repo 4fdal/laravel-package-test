@@ -2,7 +2,8 @@
 
 namespace KodeIngatan\Mudahsenyo\Tests\Feature;
 
-use App\Models\User;
+use Illuminate\Foundation\Auth\User;
+use KodeIngatan\Mudahsenyo\Models\BadasoUser;
 use KodeIngatan\Mudahsenyo\Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -14,6 +15,9 @@ class ExampleTest extends TestCase
      */
     public function test_example()
     {
+
+        dd(BadasoUser::all());
+
         $response = $this->get('/');
         $response->assertSuccessful();
     }
