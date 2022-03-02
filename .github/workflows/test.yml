@@ -79,7 +79,7 @@ jobs:
         run: cd laravel && 
           sed -i 's/DB_USERNAME=root/DB_USERNAME=home/g' .env &&
           sed -i 's/DB_HOST=127.0.0.1/DB_HOST=mysql/g' .env &&
-          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env &&
+          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env
       
       # Laravel setup
       - name: Laravel setup 
