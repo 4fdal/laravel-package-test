@@ -85,7 +85,7 @@ jobs:
       - name: Laravel file configuration
         run: cd laravel && 
           touch database/database.sqlite &&
-          sed -i 's/DB_CONNECTION=mysql/DB_USERNAME=sqlite/g' .env &&
+          sed -i 's/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/g' .env &&
           sed -i 's/DB_DATABASE=laravel/DB_DATABASE=database\/database.sqlite/g' .env
       
       # Laravel setup
