@@ -20,11 +20,7 @@ jobs:
       matrix:
         php: [8.0]
         laravel: ['8.*']
-        exclude:
-          - php: 7.3
-            laravel: 9.*
-          - php: 7.4
-            laravel: 9.*
+        laravel-require: ['8.0']
 
     name: 'PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }}'
 
@@ -59,8 +55,7 @@ jobs:
 
       # Install legacy factories for Laravel 8/9
       - name: Install legacy factories for Laravel
-        if: ${{ matrix.laravel == '8.*' || matrix.laravel == '9.*' }}
-        run: composer create-project laravel/laravel:^${{matrix.laravel}} laravel && cd laravel
+        run: composer create-project laravel/laravel:^${{matrix.laravel-require}} laravel && cd laravel
 
       # Display installed laravel version
       - name: Show laravel version
